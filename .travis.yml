@@ -6,10 +6,10 @@ deploy:
   provider: heroku
   api_key:
     secure: IfE8PJhL8t7uZkrZdq6K4Sd4NBzAxYY+WBGpXP0MUO1pWyTOu0mfd/QSCHbj9nEbtveHc3A1JLb0xdw2mKmP2v2BwaQfTKSWJV4K6OOz8IvClHZYwDfxT/iWhFjpBYkaKFOldN/oG2n+l6JlJiTgsuuw79kknf2xrcfyv6AysMPj6Xpf84KABLbxtFlYU36vRiKbIKWMk+67nqCYWVVCUl+NIIc3soBQqrMHwFQ0tBuqpu/lf7TJFAYRI6D4EFWW0bmQ8DJvs7mIeyIrAPjKNOAKwfPfv764QlHAHVDWNT2b42WJ8Ctadtb/b8UfWsltNqqqkvVNK4Pj/2Zgl/GX25oL55wR8kv5Wrm553MvZNpoeovL2IyGB7nHkFamT887m5hsytz1sjFvzs+MFT3SR1OPvAn8WYZ3NWYSPfiG7svaE37E8jrmI+b6kA61ES2RVZlQVoIuzHAU2N+0jGP79TL7jVRIWJ4JiGTmUyGOW7uvsvTMRrr+Y6/3amCUfBjlPKOtzOZdjUpSpMy56LdNH6Y3Sb6tFyTB1+8vO9bYR1YfX/CMz3W2zJZeBLMhzr3cEiEZKZwpOFP1SFSls9xH/a98h0kNWPtPU/DKueICBeZlodvTIMBkdaBelsoEeg9Fb28T6u+u2iE2Vj0LoQ42/cLSAm0fe/t9Eame0Ajvs+k=
+branches:
+  only:
+  - master
 on:
-  branches:
-   only: 
-    - master
   rvm: 2.4.1
 run:
   - "rake db:migrate" 
