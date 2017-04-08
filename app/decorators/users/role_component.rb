@@ -1,0 +1,2 @@
+module RoleComponent
+end
