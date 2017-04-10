@@ -1,5 +1,5 @@
 class DojoCreator
-	def create_dojo(type)
+	def self.create_dojo(type)
 		case type
 		when 'randori'
 			return Randori.new
