@@ -2,7 +2,11 @@ class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
 
   def index
-    @locations = Location.all
+    if params[:search].present?
+      @locations = Location.near(params[:search], 20)
+    else
+      @locations = Location.all
+    end
   end
 
   def show
@@ -55,6 +59,6 @@ class LocationsController < ApplicationController
     end
 
     def location_params
-      params.require(:location).permit(:city, :country, :address, :number, :complement)
+      params.require(:location).permit(:city, :country, :address, :number, :complement, :latitude, :longitude)
     end
 end
