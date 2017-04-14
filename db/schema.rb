@@ -13,18 +13,22 @@
 ActiveRecord::Schema.define(version: 20170409180152) do
 
   create_table "dojos", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "title"
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_dojos_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.string "username"
+    t.string "email"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["username"], name: "index_users_on_username", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end

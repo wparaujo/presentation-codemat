@@ -9,6 +9,30 @@
   </head>
 
   <body>
-    <%= yield %>
+  <!-- Navbar -->
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+	  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <a class="navbar-brand" href="/">Codemat</a>
+	  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+	    <div class="navbar-nav">
+	    <% if current_user %>
+	    	<a class="nav-item nav-link active" href="/dojos/new">Criar Dojo<span class="sr-only">(current)</span></a>
+	      	<a class="nav-item nav-link " href="/logout">Sair</a>
+	    <% else %>
+	    	<a class="nav-item nav-link active" href="/login">Entrar<span class="sr-only">(current)</span></a>
+	      	<a class="nav-item nav-link" href="/users/new">Nova Conta</a>
+	    <% end %>
+	      
+	      <!-- <a class="nav-item nav-link" href="#">Pricing</a> -->
+	      <!-- <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
+	    </div>
+	  </div>
+	</nav> <!-- end navbar -->
+
+  	<div class="container">
+  		<%= yield %>
+  	</div>
   </body>
 </html>
