@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'dojo_creator/dojoFactory'
+
   root to: 'home#index'
 
   # resources :sessions, only: [:new, :create, :destroy]
