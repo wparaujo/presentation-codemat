@@ -8,9 +8,11 @@ class ThemesController < ApplicationController
     if @theme.save
       #TODO: use Action Cable to create
       flash[:notice] = "Ok"
+      redirect_to '/'
     else
       #TODO: use Action Cable to return an error
       flash[:notice] = "Not ok"
+      redirect_to 'signup'
     end
   end
 

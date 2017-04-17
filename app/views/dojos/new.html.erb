@@ -7,7 +7,7 @@
 <%= form_for @dojo do |f| %>
 	<div class="row">
 		<div class="col-6 offset-md-4">
-				<div class="row">
+            <div class="row">
 				<div class="col-6">
 					<div class="form-group">
 						<label for="title">Título</label>
@@ -27,6 +27,20 @@
 		 			</div>
 				</div>
 			</div>
+
+			<div class="row">
+				<div class="col-6">
+					<div class="form-group">
+				    	<label for="category">Categoria</label>
+				    	<select name="dojo[category]" class="form-control" id="category">
+                            <%= @themes.each do |theme| %>
+				      		<option><%= theme.name %></option>
+                            <% end %>
+				    	</select>
+		 			</div>
+				</div>
+			</div>
+
 			<%= f.submit "Submit", class: "btn btn-primary" %>
 		</div>
 	</div>
