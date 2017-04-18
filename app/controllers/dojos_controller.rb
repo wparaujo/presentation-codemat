@@ -9,17 +9,17 @@ class DojosController < ApplicationController
 	# create facade
 	def create
 		# user = User.find current_user.id
-		@dojo = Dojo.new(dojo_params) 
+		@dojo = Dojo.new(dojo_params)
 		current_user.dojos << @dojo
 
 		if user.save
-			
+
 		else
 		end
 	end
 
 	def edit
-		
+
 	end
 
 	def update
@@ -28,8 +28,8 @@ class DojosController < ApplicationController
 	def destroy
 	end
 
-	private 
+	private
 	def dojo_params
-		params.require(:dojo).permit(:user_id, :title, :category)
+		params.require(:dojo).permit(:user_id, :title)
 	end
 end
