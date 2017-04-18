@@ -3,7 +3,7 @@ class DojosController < ApplicationController
 
   def new
     @dojo = Dojo.new
-    @themes = Themes.all
+    @themes = Theme.all
     # @user.dojos.build
   end
 
@@ -11,12 +11,13 @@ class DojosController < ApplicationController
   def create
     # user = User.find current_user.id
     @dojo = current_user.dojos.create(dojo_params)
-    theme = Theme.find(dojo_params[:theme_id])
-    theme.dojos << @dojo
 
-    if user.save
-
+    if @dojo.save
+      flash[:notice] = "Ok"
+      redirect_to '/'
     else
+      flash[:error] = "Not ok"
+      redirect_to '/'
     end
   end
 
@@ -29,7 +30,7 @@ class DojosController < ApplicationController
   def destroy
   end
 
-  private 
+  private
   def dojo_params
     params.require(:dojo).permit(:user_id, :theme_id, :title, :category)
   end
