@@ -14,5 +14,6 @@ module LearnMeeting
     # config.autoload_paths += %W(#{config.root}/lib)
     config.autoload_paths << "#{Rails.root}/app/decorators/users"
     config.autoload_paths << "#{Rails.root}/app/factory/models/dojos"
+    config.autoload_paths << "#{Rails.root}/lib"
   end
 end
