@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'home#index'
+  get 'home' => 'users#home'
 
   # resources :sessions, only: [:new, :create, :destroy]
   get 'login' => 'sessions#new'

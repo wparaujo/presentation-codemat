@@ -1,4 +1,8 @@
 class ThemesController < ApplicationController
+  def index
+    @themes = Themes.all
+  end
+
   def new
     @theme = Theme.new
   end
@@ -17,9 +21,19 @@ class ThemesController < ApplicationController
   end
 
   def update
-    @theme = Theme.find current_user.id
+    @theme = Theme.find params[:id]
 
     if @theme.update_attributes(theme_params)
+      flash[:notice] = "Ok"
+    else
+      flash[:notice] = "Not ok"
+    end
+  end
+
+  def follow
+    #TODO: create route POST to follow
+    @theme = Theme.find params[:id]
+    if @theme.add_observer(current_user)
       flash[:notice] = "Ok"
     else
       flash[:notice] = "Not ok"
