@@ -5,6 +5,11 @@ class UsersController < ApplicationController
 
   def home
     @my_themes = current_user.theme_notifiers
+
+    if @my_themes.empty?
+      #TODO: Use action cable to popup a theme selector
+      redirect_to select_themes_path
+    end
   end
 
   def create

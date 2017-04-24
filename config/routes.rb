@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   resources :users
   resources :dojos, only: [:new, :create]
   resources :themes
+
+  get 'select_themes' => 'themes#select_themes'
+  post 'follow' => 'themes#follow'
 end

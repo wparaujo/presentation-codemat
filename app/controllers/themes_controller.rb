@@ -30,10 +30,13 @@ class ThemesController < ApplicationController
     end
   end
 
+  def select_themes
+    @themes = current_user.themes_i_am_not_observer
+  end
+
   def follow
-    #TODO: create route POST to follow
-    @theme = Theme.find params[:id]
-    if @theme.add_observer(current_user)
+    @themes = Theme.find params[:theme_notifiers][1..-1]
+    if @themes.map { |theme| theme.add_observer(current_user) }
       flash[:notice] = "Ok"
     else
       flash[:notice] = "Not ok"
