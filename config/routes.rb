@@ -13,4 +13,5 @@ Rails.application.routes.draw do
 
   get 'select_themes' => 'themes#select_themes'
   post 'follow' => 'themes#follow'
+  post 'unfollow' => 'themes#unfollow'
 end

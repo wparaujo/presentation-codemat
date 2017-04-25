@@ -1,11 +1,31 @@
 <div class="row">
-	<div class="col-6 offset-md-3">
-		<h3>Criar um tema</h3>
-	</div>
-</div>
+  <div class="col-6 offset-md-3">
+    <h4>Temas que eu sigo</h4>
+  </div>
+
+  <% @following_themes.each do |theme| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="images/Lenna.png" alt="#" style="width: 100%; height: 100%;">
+        <h3><%= theme.name %></h3>
+        <p>bla bla bla bla bla bla bla bla</p>
+        <%= button_to "Parar de seguir",
+            unfollow_path(id: theme.id),
+            class: "btn btn-primary",
+            remote: true %>
+      </div>
+    </div>
+  <% end %>
+</div><!-- .row -->
+
+<hr/>
 
 <div class="row">
-  <% @themes.each do |theme| %>
+  <div class="col-6 offset-md-3">
+    <h4>Temas para seguir</h4>
+  </div>
+
+  <% @other_themes.each do |theme| %>
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
         <img src="images/Lenna.png" alt="#" style="width: 100%; height: 100%;">
@@ -13,7 +33,8 @@
         <p>bla bla bla bla bla bla bla bla</p>
         <%= button_to "Seguir",
             follow_path(id: theme.id),
-            class: "btn btn-primary" %>
+            class: "btn btn-primary",
+            remote: true %>
       </div>
     </div>
   <% end %>

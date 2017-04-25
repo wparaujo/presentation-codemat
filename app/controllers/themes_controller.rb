@@ -31,12 +31,24 @@ class ThemesController < ApplicationController
   end
 
   def select_themes
-    @themes = current_user.themes_i_am_not_observer
+    @following_themes = current_user.theme_notifiers
+    @other_themes = current_user.themes_i_am_not_observer
   end
 
   def follow
-    @themes = Theme.find params[:theme_notifiers][1..-1]
-    if @themes.map { |theme| theme.add_observer(current_user) }
+    @theme = Theme.find params[:id]
+
+    if @theme.add_observer(current_user)
+      flash[:notice] = "Ok"
+    else
+      flash[:notice] = "Not ok"
+    end
+  end
+
+  def unfollow
+    @theme = Theme.find params[:id]
+
+    if @theme.delete_observer(current_user)
       flash[:notice] = "Ok"
     else
       flash[:notice] = "Not ok"
