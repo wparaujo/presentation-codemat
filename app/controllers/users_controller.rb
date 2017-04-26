@@ -4,13 +4,21 @@ class UsersController < ApplicationController
   end
 
   def create
-  	user = User.new(user_params)
-  	if user.save
-  		session[:user_id] = user.id
-  		redirect_to '/'
-  	else
-  		redirect_to 'signup'
-  	end
+    # Refactor this line later
+    if User.where(email: user_params[:email])[0]
+      # Duplicated user
+      # TO DO: print error message - user already exists
+      redirect_to login_path
+    else
+      user = User.new(user_params)
+      if user.save
+        session[:user_id] = user.id
+        redirect_to '/'
+      else
+        redirect_to 'signup'
+      end
+    end
+
   end
 
   def update
