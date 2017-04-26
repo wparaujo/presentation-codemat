@@ -13,41 +13,7 @@
   </head>
 
   <body>
-    <div class="row">
-      <nav class="navbar col-md-12 navbar-toggleable-md navbar-light bg-faded">
-          <button class="navbar-toggler navbar-toggler-right"
-                  type="button" data-toggle="collapse"
-                  data-target="#navbarExample"
-                  aria-controls="navbarExample"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="container">
-              <a class="navbar-brand" href="#">Codemat</a>
-              <div class="collapse navbar-collapse" id="navbarExample">
-                  <ul class="navbar-nav ml-auto">
-                  <% if current_user %>
-                      <li class="nav-item">
-                          <a class="nav-link" href="/dojos/new">Criar Dojo</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="/logout">Sair</a>
-                      </li>
-                  <% else %>
-                      <li class="nav-item">
-                          <a class="nav-link" href="/login">Entrar</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="/users/new">Nova Conta</a>
-                      </li>
-                  <% end %>
-                  </ul>
-              </div>
-          </div>
-      </nav>
-    </div>
-
+    <%= render partial: 'layouts/navbar' %>
     <div class = "row">
       <div class="container">
           <%= yield %>

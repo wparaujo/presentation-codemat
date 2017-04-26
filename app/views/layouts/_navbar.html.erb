@@ -1,0 +1,41 @@
+<div class="row">
+  <nav class="navbar col-md-12 navbar-toggleable-md navbar-light bg-faded">
+    <div class="container">
+      <a class="navbar-brand" href="#">Codemat</a>
+        <ul class="navbar-nav ml-auto">
+          <% if current_user %>
+
+            <li class="nav-item">
+
+
+            <div class="dropdown">
+              <a class="dropdown-toggle nav-link" data-toggle="dropdown">
+                Messages
+                <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-item"><a href="#">HTML</a></li>
+                <li class="dropdown-item"><a href="#">CSS</a></li>
+                <li class="dropdown-item"><a href="#">JavaScript</a></li>
+              </ul>
+            </div>
+
+
+            </li>
+            <li class="nav-item">
+              <%= link_to "Criar Dojo", new_dojo_path , class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Sair", logout_path, class: "nav-link" %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Entrar", login_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Nova Conta", new_user_path , class: "nav-link" %>
+            </li>
+          <% end %>
+        </ul>
+    </div>
+  </nav>
+</div>
