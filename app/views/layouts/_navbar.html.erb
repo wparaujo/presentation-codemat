@@ -13,9 +13,11 @@
                 Messages
                 <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li class="dropdown-item"><a href="#">HTML</a></li>
-                <li class="dropdown-item"><a href="#">CSS</a></li>
-                <li class="dropdown-item"><a href="#">JavaScript</a></li>
+                <% current_user.notifications.only_active.each do |notification| %>
+                  <li class="dropdown-item">
+                    <%= link_to notification.message, notification.link %>
+                  </li>
+                <% end %>
               </ul>
             </div>
 

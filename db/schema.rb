@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170419055621) do
+ActiveRecord::Schema.define(version: 20170426043706) do
 
   create_table "dojos", force: :cascade do |t|
     t.integer "user_id"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20170419055621) do
     t.integer "theme_id"
     t.index ["theme_id"], name: "index_dojos_on_theme_id"
     t.index ["user_id"], name: "index_dojos_on_user_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer "user_id"
+    t.boolean "active", default: true
+    t.text "message"
+    t.string "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
   create_table "notifiers_observers", force: :cascade do |t|
