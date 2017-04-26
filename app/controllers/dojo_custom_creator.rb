@@ -1,4 +1,4 @@
-class DojoCreatorController < ApplicationController
+class DojoCustomCreator
   DojoTypes = {
     kata: Kata,
     randori: Randori
@@ -7,7 +7,7 @@ class DojoCreatorController < ApplicationController
   def self.dojoFactory(category, title)
     if DojoTypes[category]
        newDojo = DojoTypes[category].new
-       newDojo.user = current_user.id
+       #newDojo.user = current_user.id
        newDojo.title = title
 
        return newDojo

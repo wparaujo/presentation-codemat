@@ -9,10 +9,20 @@ class DojosController < ApplicationController
 	# create facade
 	def create
 		# user = User.find current_user.id
-		@dojo = Dojo.new(dojo_params)
+		
+		#@dojo = Dojo.new(dojo_params)
+		#dojoCreator = DojoCreator.new
+		puts "#{:category_id}" 
+		@dojo = DojoCustomCreator.dojoFactory(:category_id, :title)
+
 		current_user.dojos << @dojo
 
-		if user.save
+		if current_user.save
+
+		else
+		end
+
+		if @dojo.save
 
 		else
 		end
@@ -30,6 +40,6 @@ class DojosController < ApplicationController
 
 	private
 	def dojo_params
-		params.require(:dojo).permit(:user_id, :title)
+		params.require(:dojo).permit(:user_id, :title, :category_id)
 	end
 end

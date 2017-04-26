@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'dojo_creator/dojoFactory'
+  #get 'dojo_creator/dojoFactory'
 
   root to: 'home#index'
 
