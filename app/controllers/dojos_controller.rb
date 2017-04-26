@@ -12,14 +12,18 @@ class DojosController < ApplicationController
 		
 		#@dojo = Dojo.new(dojo_params)
 		#dojoCreator = DojoCreator.new
-		puts "#{:category_id}" 
-		@dojo = DojoCustomCreator.dojoFactory(:category_id, :title)
+		
+		#puts "Category ->" + params[:dojo][:title]
+		#puts params.inspect
+
+		@dojo = DojoCustomCreator.dojoFactory(params[:dojo][:category].to_sym, params[:dojo][:title])
 
 		current_user.dojos << @dojo
 
 		if current_user.save
 
 		else
+
 		end
 
 		if @dojo.save
