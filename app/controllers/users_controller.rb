@@ -23,12 +23,15 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find current_user.id
-    if @user.update_attributes(user_params)
+    if current_user.update_attributes(user_params)
       flash[:notice] = "Ok"
     else
       flash[:notice] = "not ok"
     end
+  end
+
+  def settings
+
   end
 
   private

@@ -8,10 +8,12 @@ Rails.application.routes.draw do
   get 'logout' => 'sessions#destroy'
 
   resources :users
-  resources :dojos, only: [:new, :create]
-  resources :themes
+  get 'settings' => 'users#settings'
 
+  resources :themes
   get 'select_themes' => 'themes#select_themes'
   post 'follow' => 'themes#follow'
   post 'unfollow' => 'themes#unfollow'
+
+  resources :dojos, only: [:new, :create]
 end
