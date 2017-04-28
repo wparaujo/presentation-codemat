@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   get 'logout' => 'sessions#destroy'
 
   resources :users
-  get 'settings' => 'users#settings'
 
   resources :themes
   get 'select_themes' => 'themes#select_themes'

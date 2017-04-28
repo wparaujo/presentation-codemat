@@ -31,8 +31,7 @@ class ThemesController < ApplicationController
   end
 
   def select_themes
-    @following_themes = current_user.theme_notifiers
-    @other_themes = current_user.themes_i_am_not_observer
+
   end
 
   def follow
