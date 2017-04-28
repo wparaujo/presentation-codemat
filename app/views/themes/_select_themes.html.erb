@@ -1,0 +1,60 @@
+<% unless current_user.theme_notifiers.empty? %>
+  <div class="col-6 offset-md-3 text-center">
+    <h4>Seguindo</h4>
+  </div>
+  <hr/>
+<% end %>
+
+<div class="container">
+  <div class="row">
+    <% current_user.theme_notifiers.each do |theme| %>
+      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+        <%= link_to unfollow_path(id: theme.id), method: :post, remote: true do %>
+          <div class="thumbnail text-center">
+            <img src="images/Lenna.png" alt="#" style="width: 100%; height: 100%;">
+            <div class="caption">
+              <h5><%= theme.name %></h5>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<% unless current_user.themes_i_am_not_observer.empty? %>
+  <div class="col-6 offset-md-3 text-center">
+    <h4>Para seguir</h4>
+  </div>
+  <hr/>
+<% end %>
+
+<div class="container">
+  <div class="row">
+    <% current_user.themes_i_am_not_observer.each do |theme| %>
+      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+        <%= link_to follow_path(id: theme.id), method: :post, remote: true do %>
+          <div class="thumbnail text-center">
+            <img src="images/Lenna.png" alt="#" style="width: 100%; height: 100%;">
+            <div class="caption">
+              <h5><%= theme.name %></h5>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<style media="screen" type="text/css">
+.thumbnail {
+    position: relative;
+}
+
+.caption {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+}
+</style>
