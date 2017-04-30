@@ -11,4 +11,8 @@ class User < ApplicationRecord
   def themes_i_am_not_observer
     Theme.all_except_with_observer(self, :theme_notifiers)
   end
+
+  def notify (message, link)
+    self.notifications.create!({message: message, link: link})
+  end
 end
