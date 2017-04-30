@@ -13,6 +13,8 @@ class DojosController < ApplicationController
     @dojo = current_user.dojos.create(dojo_params)
 
     if @dojo.save
+      theme = Theme.find dojo_params[:theme_id]
+      theme.dojos << @dojo
       flash[:notice] = "Ok"
       redirect_to '/'
     else

@@ -1,5 +1,5 @@
-module Notifier
-  module Model
+module Observer
+  module Notifier
     def initialize(*attrs)
       super(*attrs)
     end
@@ -16,10 +16,10 @@ module Notifier
       self.observers.delete observer
     end
 
-    def notify_observers
-      @observers.each do |observer|
-        #TODO: Implements notify for User
-        #observer.notify(self)
+    def notify_observers(notify_method, *args)
+      self.observers.each do |observer|
+        #TODO: URI of dojo
+        observer.send(notify_method, *args)
       end
     end
   end
@@ -35,9 +35,5 @@ module Notifier
         all
       end
     end
-  end
-
-  module Controller
-    #TODO: Implements controller methods for observers
   end
 end
