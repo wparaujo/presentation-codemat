@@ -6,6 +6,43 @@
    			<button class="btn btn-primary">Veja como</button>     
    		</div>
 
+	<!-- Explanation Section -->
+
+	<section id="services" class="section section-padded">
+		<div class="container">
+			<div class="row services">
+				<div class="col-md-4">
+					<div class="service">
+						<div class="icon-holder">
+							<img src="http://henriquedutra.com.br/wp-content/uploads/2017/04/randori.png" alt="" class="icon">
+						</div>
+						<h4 class="heading">Randori</h4>
+						<p class="description">Dojo em que há a participação de todos. É proposto um problema a ser resolvido e a solução será alcançada por pares. É imprescindível a utilização de um piloto, e seu par o co-piloto, onde a cada cinco minutos terá trocas de papeis com a entrada de um membro da plateia</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="service">
+						<div class="icon-holder">
+							<img src="http://henriquedutra.com.br/wp-content/uploads/2017/04/dojo.png" alt="" class="icon">
+						</div>
+						<h4 class="heading">Dojo em sua melhor forma</h4>
+						<p class="description">Dojo, (pronuncia-se Dojô) é uma palavra de origem japonesa e significa “local de treinamento”. O learn and meet é uma plataforma para você se conectar com pessoas, sendo elas treinadores e pessoas com sede por conhecimento.</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="service">
+						<div class="icon-holder">
+							<img src="http://henriquedutra.com.br/wp-content/uploads/2017/04/kata.png" alt="" class="icon">
+						</div>
+						<h4 class="heading">Kata</h4>
+						<p class="description">Dojo em que existe a figura do apresentador. Ele deve demonstrar uma solução pronta, previamente desenvolvida. Todos os participantes devem ser capazes de reproduzir a solução alcançando o mesmo resultado, sendo permitido realizar interrupções para sanar dúvidas </p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="cut cut-bottom"></div>
+	</section>
+
 	<!-- Dojo Section -->
 	<section id="dojo" class="content-section text-center">
 		<div class="row">
@@ -21,10 +58,10 @@
 
 	                <div id='t2' class='col-md-4 col-sm-6 col-xs-12 tiles'>
 	                	<a href='#' target="_blank">
-		                	<div class='text-center'><i class="fa fa-calculator"></i>
+		                	<div class='text-center'><i class="fa fa-map-o"></i>
 		                	</div>
 	                	</a>
-	                	<h4>Calculo</h4>
+	                	<h4>Humanas</h4>
 	                </div>
 
 	                <div id='t3' class='col-md-4 col-sm-6 col-xs-12 tiles'>
@@ -63,18 +100,18 @@
 
 	                <div id='t7' class='col-md-4 col-sm-6 col-xs-12 tiles'>
 	                	<a href='' target="_blank">
-	                		<div class='text-center'><i class="fa fa-bullseye"></i>
+	                		<div class='text-center'><i class="fa fa-music"></i>
 	                		</div>
 	                	</a>
-	                	<h4>Somente x</h4>
+	                	<h4>Música</h4>
 	                </div>
 
 	                <div id='t8' class='col-md-4 col-sm-6 col-xs-12 tiles'>
 	                	<a href='' target="_blank">
-	                		<div class='text-center'><i class="fa fa-sticky-note"></i>
+	                		<div class='text-center'><i class="fa fa-paint-brush"></i>
 	                		</div>
 	                	</a>
-	                	<h4>Somente y</h4>
+	                	<h4>Arte</h4>
 	                </div>
 
 	                <div id='t9' class='col-md-4 col-sm-6 col-xs-12 tiles'>
@@ -144,7 +181,6 @@
 	padding: 90px 0; 
 }
 
-
 #dojo {
   margin-right: 15px;
 }
@@ -182,6 +218,9 @@
 #t8{ background: #65A4ED;}
 #t9{ background: #FFC35F;}
 
+.row.title {
+	padding: 0 20px;
+}
 
 .tiles {
   position: relative;
@@ -283,6 +322,98 @@ content-section {
 	.footer-distributed .footer-left p.footer-links{
 		line-height: 1.8;
 	}
+}
+
+
+.services {
+	margin: 40px 0;
+}
+
+.service {
+	width: 100%;
+	height: 320px;
+	margin: 80px 0;
+	text-align: center;
+	border: 1px solid #ddd;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.service .icon-holder {
+	position: relative;
+	top: 100px;
+	display: inline-block;
+	margin-bottom: 40px;
+	padding: 10px;
+	background: white;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.service .heading {
+	position: relative;
+	top: 80px;
+	-webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.service .icon-holder > img.icon {
+	width: 40px;
+}
+
+.service:hover {
+	border-color: #00a8ff;
+}
+
+.service:hover .icon-holder {
+	top: -30px;
+}
+
+.service:hover .heading {
+	top: -30px;
+}
+
+.service .description {
+	width: 80%;
+	margin: 0 auto;
+	opacity: 0;
+	-webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	-webkit-transform: scale(0);
+	-ms-transform: scale(0);
+	transform: scale(0);
+}
+
+.service:hover .description {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+}
+
+.logo-font-explanation {
+  line-height: 1;
+  color: #343434;
+}
+.sub-slogan-explanation {
+  font-size: 41px;
+  padding-top: 24px;
+  padding-bottom: 14px;
+  font-weight: 500;
+}
+.title{
+	justify-content: center;
+}
+.muted {
+	color: #989da0;
+}
+
+.light {
+	font-weight: 300;
+}
+
+.regular {
+	font-weight: 400;
 }
 
 </style>
