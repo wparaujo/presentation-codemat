@@ -7,8 +7,6 @@ class ApplicationController < ActionController::Base
   	if (session[:user_id])
   		@current_user ||= User.where(id: session[:user_id])[0]
   	end
-  	# Using the command bellow the application breaks after dropping the database
-  	#@current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
   def authorize
