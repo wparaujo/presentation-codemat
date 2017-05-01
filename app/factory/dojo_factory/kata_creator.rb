@@ -2,7 +2,9 @@ module DojoFactory
   class KataCreator
 
     def self.create(title)
-      puts "Created Kata"
+      newDojo = Kata.new
+      newDojo.title = title
+      return newDojo
     end
 
   end

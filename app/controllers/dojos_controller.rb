@@ -7,15 +7,20 @@ class DojosController < ApplicationController
 		@dojo = Dojo.new
 	end
 
+    DojoTypes = {
+      kata: DojoFactory::KataCreator,
+      randori: DojoFactory::RandoriCreator
+    }
 	def create
 
-		@dojo = DojoFactory::DojoCreator.create(params[:dojo][:category].to_sym, params[:dojo][:title])
+	    dojoType = DojoTypes[dojo_params[:category].to_sym]
 
-		current_user.dojos << @dojo
-
-		if current_user.save
-		else
+		if (dojoType)
+			@dojo = dojoType.create(dojo_params[:title])
 		end
+		
+		@dojo.user = current_user
+
 
 		if @dojo.save
 		else
@@ -35,6 +40,6 @@ class DojosController < ApplicationController
 
 	private
 	def dojo_params
-		params.require(:dojo).permit(:user_id, :title, :category_id)
+		params.require(:dojo).permit(:user_id, :title, :category)
 	end
 end

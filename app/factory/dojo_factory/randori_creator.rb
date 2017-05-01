@@ -2,7 +2,9 @@ module DojoFactory
   class RandoriCreator
 
     def self.create(title)
-      puts "Created Randori"
+      newDojo = Randori.new
+      newDojo.title = title
+      return newDojo
     end
 
   end
