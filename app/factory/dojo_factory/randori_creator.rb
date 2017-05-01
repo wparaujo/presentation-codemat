@@ -1,9 +1,9 @@
 module DojoFactory
-  class RandoriCreator
+  class RandoriCreator < DojoCreator
 
-    def self.create(title)
+    def self.createDojo(params)
       newDojo = Randori.new
-      newDojo.title = title
+      newDojo.title = params[:title]
       return newDojo
     end
 

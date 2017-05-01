@@ -14,16 +14,15 @@ class DojosController < ApplicationController
 	def create
 
 	    dojoType = DojoTypes[dojo_params[:category].to_sym]
-
 		if (dojoType)
-			@dojo = dojoType.create(dojo_params[:title])
+			@dojo = dojoType.create(dojo_params, current_user)
 		end
-		
-		@dojo.user = current_user
-
 
 		if @dojo.save
+			# Ok
 		else
+			# TODO: Error saving the dojo
+			raise "Error"
 		end
 
 	end

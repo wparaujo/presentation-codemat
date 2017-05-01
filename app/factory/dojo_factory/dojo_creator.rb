@@ -1,28 +1,17 @@
 module DojoFactory
   class DojoCreator
 
-    def self.create(title)
+    def self.create(params, current_user)
+      new_dojo = createDojo(params)
+      new_dojo.user = current_user
+      return new_dojo
+    end
+
+
+    def self.createDojo(params)
       raise "Non implemented Method"
     end
 
+
   end
 end
-
-
-
-    # DojoTypes = {
-    #   kata: Kata,
-    #   randori: Randori
-    # }
-
-    # def self.create(category, title)
-    #   if DojoTypes[category]
-    #      newDojo = DojoTypes[category].new
-    #      newDojo.title = title
-
-    #      return newDojo
-    #   else
-    #     raise "Undefined Dojo category"
-    #   end
-
-    # end
