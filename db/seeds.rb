@@ -9,15 +9,15 @@
 # Creating valid user
 puts "Creating themes."
 Theme.create([
-  {name: "Programação"},
-  {name: "Exatas"},
-  {name: "Empreendedorismo"},
-  {name: "Jogos"},
-  {name: "Ambiente"},
-  {name: "Humanas"},
-  {name: "Arte"},
-  {name: "Tecnologia"},
-  {name: "Música"},
-  {name: "Outros"}
+  {name: "Programação", iconName: "fa fa-code"},
+  {name: "Exatas", iconName: "fa fa-thermometer-2"},
+  {name: "Empreendedorismo", iconName: "fa fa-navicon"},
+  {name: "Jogos", iconName: "fa fa-gamepad"},
+  {name: "Ambiente", iconName: "fa fa-tree"},
+  {name: "Humanas", iconName: "fa fa-map"},
+  {name: "Arte", iconName: "fa fa-brush"},
+  {name: "Tecnologia", iconName: "fa fa-code"},
+  {name: "Música", iconName: "fa fa-music"},
+  {name: "Outros", iconName: "fa fa-arrows-alt"}
 ])
 puts "Done."
