@@ -15,7 +15,7 @@ Theme.create([
   {name: "Jogos", iconName: "fa fa-gamepad"},
   {name: "Ambiente", iconName: "fa fa-tree"},
   {name: "Humanas", iconName: "fa fa-map"},
-  {name: "Arte", iconName: "fa fa-brush"},
+  {name: "Arte", iconName: "fa fa-paint-brush"},
   {name: "Tecnologia", iconName: "fa fa-code"},
   {name: "Música", iconName: "fa fa-music"},
   {name: "Outros", iconName: "fa fa-arrows-alt"}
