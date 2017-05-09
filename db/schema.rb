@@ -29,6 +29,18 @@ ActiveRecord::Schema.define(version: 20170509023333) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "locations", force: :cascade do |t|
+    t.string "city"
+    t.string "country"
+    t.string "address"
+    t.integer "number"
+    t.string "complement"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
+  end
+
   create_table "notifications", force: :cascade do |t|
     t.integer "user_id"
     t.boolean "active", default: true

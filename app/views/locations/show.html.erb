@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>City:</strong>
+  <%= @location.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @location.country %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @location.address %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @location.number %>
+</p>
+
+<p>
+  <strong>Complement:</strong>
+  <%= @location.complement %>
+</p>
+
+<p>
+  <strong>Coordenates:</strong><br />
+  lat: <%= @location.latitude %><br />
+  lon: <%= @location.longitude %>
+</p>
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}" %>
+
+<h3>Nearby locations</h3>
+<ul>
+  <% for location in @location.nearbys(20) %>
+    <li><%= link_to location.address, location %> (<%= (location.distance * 1.6).round(2) %> KM)</li>
+  <% end %>
+</ul>
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>
