@@ -7,15 +7,15 @@ class DojosController < ApplicationController
 		@dojo = Dojo.new
 	end
 
-    DojoTypes = {
+    DojoFactories = {
       kata: DojoFactory::KataCreator,
       randori: DojoFactory::RandoriCreator
     }
 	def create
 
-	    dojoType = DojoTypes[params[:dojo][:category].to_sym]
-		if (dojoType)
-			@dojo = dojoType.create(dojo_params, current_user)
+	    dojoFactories = DojoFactories[params[:dojo][:category].to_sym]
+		if (dojoFactories)
+			@dojo = dojoFactories.create(dojo_params, current_user)
 		end
 
 		if @dojo.save
