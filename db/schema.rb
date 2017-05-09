@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170414224842) do
+ActiveRecord::Schema.define(version: 20170509125223) do
 
   create_table "dojos", force: :cascade do |t|
     t.integer "user_id"
@@ -39,6 +39,12 @@ ActiveRecord::Schema.define(version: 20170414224842) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.string "source"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

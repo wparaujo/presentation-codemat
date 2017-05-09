@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # get 'video/new'
+
   #get 'dojo_creator/dojoFactory'
 
   root to: 'home#index'
@@ -7,7 +9,10 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy'
-  
+
+  # get 'new_stream' => 'videos#index'
+  resources :videos
+
   resources :users
   resources :dojos, only: [:new, :create, :index]
 
