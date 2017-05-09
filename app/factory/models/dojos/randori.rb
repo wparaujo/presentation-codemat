@@ -1,2 +1,0 @@
-class Randori < Dojo
-end

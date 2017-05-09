@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  #get 'dojo_creator/dojoFactory'
+
   root to: 'home#index'
   get 'home' => 'users#home'
 
@@ -9,10 +11,10 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :dojos, only: [:new, :create, :index]
+
   resources :themes
   get 'select_themes' => 'themes#select_themes'
   post 'follow' => 'themes#follow'
   post 'unfollow' => 'themes#unfollow'
-
-  resources :dojos, only: [:new, :create]
 end
