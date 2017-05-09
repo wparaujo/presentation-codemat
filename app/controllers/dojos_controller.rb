@@ -13,7 +13,7 @@ class DojosController < ApplicationController
     }
 	def create
 
-	    dojoType = DojoTypes[dojo_params[:category].to_sym]
+	    dojoType = DojoTypes[params[:dojo][:category].to_sym]
 		if (dojoType)
 			@dojo = dojoType.create(dojo_params, current_user)
 		end
@@ -39,6 +39,6 @@ class DojosController < ApplicationController
 
 	private
 	def dojo_params
-		params.require(:dojo).permit(:user_id, :title, :category)
+		params.require(:dojo).permit(:user_id, :title)
 	end
 end

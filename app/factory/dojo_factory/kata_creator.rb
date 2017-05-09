@@ -1,9 +1,9 @@
 module DojoFactory
   class KataCreator < DojoCreator
 
-    def self.createDojo(params)
+    def self.createDojoCategory(params)
       newDojo = Kata.new
-      newDojo.title = params[:title]
+      newDojo.save
       return newDojo
     end
 
