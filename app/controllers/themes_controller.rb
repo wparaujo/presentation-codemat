@@ -37,11 +37,14 @@ class ThemesController < ApplicationController
   def follow
     @theme = Theme.find params[:id]
 
+      redirect_to 'signup'
+
     if @theme.add_observer(current_user)
       flash[:notice] = "Ok"
     else
       flash[:notice] = "Not ok"
     end
+
   end
 
   def unfollow
@@ -52,6 +55,7 @@ class ThemesController < ApplicationController
     else
       flash[:notice] = "Not ok"
     end
+
   end
 
   private
