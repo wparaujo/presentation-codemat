@@ -8,8 +8,17 @@ class VideosController < ApplicationController
     end
 
     def create
-        @video = Video.new(stream_params)
-        @video.source = "http://www.youtube.com/embed/"+"br6aGt_UnIc"
+        @video = Video.new
+        videoUrl = stream_params[:source]
+        videoSource = @video.extractVideoId videoUrl
+
+        if videoSource != nil
+            @video.source = "http://www.youtube.com/embed/"+videoSource
+        else
+            # nothing
+        end
+
+
         if @video.save
             logger.debug "Saving video: #{@video.attributes.inspect}"
         else
