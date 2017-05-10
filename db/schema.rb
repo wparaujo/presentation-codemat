@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170509023333) do
+ActiveRecord::Schema.define(version: 20170510094241) do
 
   create_table "dojos", force: :cascade do |t|
     t.integer "user_id"
@@ -30,15 +30,11 @@ ActiveRecord::Schema.define(version: 20170509023333) do
   end
 
   create_table "locations", force: :cascade do |t|
-    t.string "city"
-    t.string "country"
     t.string "address"
-    t.integer "number"
-    t.string "complement"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "notifications", force: :cascade do |t|
