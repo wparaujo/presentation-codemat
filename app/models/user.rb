@@ -7,9 +7,7 @@ class User < ApplicationRecord
                           class_name: "Theme",
                           join_table: "notifiers_observers"
   has_one :location
-
-  accepts_nested_attributes_for :dojos
-  accepts_nested_attributes_for :location
+  delegate :randoris, :katas, to: :dojos
 
   def themes_i_am_not_observer
     Theme.all_except_with_observer(self, :theme_notifiers)
