@@ -1,5 +1,6 @@
 class Dojo < ApplicationRecord
 	belongs_to :user
+	has_one :video
 	self.inheritance_column = 'category'
 
   scope :katas, -> { where(category: 'Kata') }

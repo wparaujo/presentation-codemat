@@ -70,4 +70,12 @@ ActiveRecord::Schema.define(version: 20170510094241) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  create_table "videos", force: :cascade do |t|
+    t.string "source"
+    t.integer "dojo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dojo_id"], name: "index_videos_on_dojo_id"
+  end
+
 end

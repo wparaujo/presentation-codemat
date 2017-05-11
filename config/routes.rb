@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root to: 'home#index'
   get 'home' => 'users#home'
 
@@ -11,6 +10,7 @@ Rails.application.routes.draw do
   post 'follow' => 'themes#follow'
   post 'unfollow' => 'themes#unfollow'
 
+  resources :videos
   resources :users
   resources :dojos, only: [:new, :create, :index]
   resources :themes

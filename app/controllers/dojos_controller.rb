@@ -6,6 +6,7 @@ class DojosController < ApplicationController
     @dojo = Dojo.new
     @themes = Theme.all
     @location = Location.new
+    @video = Video.new
   end
 
   # create facade
@@ -14,13 +15,13 @@ class DojosController < ApplicationController
     dojo_factory = dojos_factories[category]
 
     if (dojo_factory)
-      puts "a"*50
-      puts
-      puts current_user
-      puts
-      puts "a"*50
       @dojo = dojo_factory.create(dojo_params, current_user)
       @dojo.create_location(location_params)
+    end
+
+    if video_params[:source]
+      puts entrou 
+      @dojo.video_create(video_params)
     end
 
     if @dojo.save
@@ -43,6 +44,10 @@ class DojosController < ApplicationController
   def destroy
   end
 
+  def show
+    @dojo = Dojo.find params[:id]
+  end
+
   private
     def dojo_params
       params.require(:dojo).permit(:user_id, :theme_id, :title, :category)
@@ -50,6 +55,10 @@ class DojosController < ApplicationController
 
     def location_params
       params.require(:location).permit(:address, :latitude, :longitude)
+    end
+
+    def video_params
+      params.require(:video).permit(:source)
     end
 
     def dojos_factories
