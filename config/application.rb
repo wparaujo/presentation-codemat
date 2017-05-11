@@ -16,6 +16,5 @@ module LearnMeeting
 
     config.autoload_paths << "#{Rails.root}/app/decorators/users"
     config.autoload_paths << "#{Rails.root}/lib"
-    config.autoload_paths += Dir[Rails.root.join('factory', 'dojo_factory')]
   end
 end

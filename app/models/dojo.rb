@@ -1,10 +1,14 @@
 class Dojo < ApplicationRecord
 	belongs_to :user
+	self.inheritance_column = :category
 
-	# Was used for STI => self.inheritance_column = :category
+  scope :katas, -> { where(category: 'kata') }
+  scope :randoris, -> { where(category: 'randori') }
 
-	belongs_to :categorizable, polymorphic: true, optional: true
-
-	# To do
-	#delegate :method1 :method2, to: :dojo_category
+  def self.categories
+    %w(kata randori)
+  end
 end
+
+class Kata < Dojo; end
+class Randori < Dojo; end

@@ -10,23 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170509023333) do
+ActiveRecord::Schema.define(version: 20170426043706) do
 
   create_table "dojos", force: :cascade do |t|
     t.integer "user_id"
     t.string "title"
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "theme_id"
-    t.integer "categorizable_id"
-    t.string "categorizable_type"
     t.index ["theme_id"], name: "index_dojos_on_theme_id"
     t.index ["user_id"], name: "index_dojos_on_user_id"
-  end
-
-  create_table "kata", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "locations", force: :cascade do |t|
@@ -56,11 +50,6 @@ ActiveRecord::Schema.define(version: 20170509023333) do
     t.integer "user_id"
     t.index ["theme_id"], name: "index_notifiers_observers_on_theme_id"
     t.index ["user_id"], name: "index_notifiers_observers_on_user_id"
-  end
-
-  create_table "randoris", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "themes", force: :cascade do |t|
