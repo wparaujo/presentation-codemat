@@ -8,9 +8,9 @@ class UsersController < ApplicationController
 
   def create
   	user = User.new(user_params)
+    user.create_location(location_params)
 
   	if user.save
-      user.create_location(location_params)
   		session[:user_id] = user.id
   		redirect_to theme_dojos_path
   	else

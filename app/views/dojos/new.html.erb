@@ -37,6 +37,16 @@
         </div>
       </div>
 
+      
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="title">Início</label>
+            <%= f.datetime_field :starts_at, id: 'starts_at', class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+
       <%= form_for @location do |l|%>
         <div class="row">
           <div class="col-6">

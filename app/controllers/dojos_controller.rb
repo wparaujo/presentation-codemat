@@ -19,9 +19,12 @@ class DojosController < ApplicationController
       @dojo.create_location(location_params)
     end
 
-    # if video_params[:source]
-    #   @dojo.create_video(video_params)
-    # end
+    if params[:video][:source]
+      @url_video = params[:video][:source]
+      @source = Video.extract_video_id @url_video
+      embed = "http://www.youtube.com/embed/"+ @source
+      @dojo.create_video(video_params.merge!(source: embed))
+    end
 
     if @dojo.save
       theme = Theme.find dojo_params[:theme_id]
@@ -49,7 +52,7 @@ class DojosController < ApplicationController
 
   private
     def dojo_params
-      params.require(:dojo).permit(:user_id, :theme_id, :title, :category)
+      params.require(:dojo).permit(:user_id, :theme_id, :title, :category, :starts_at)
     end
 
     def location_params

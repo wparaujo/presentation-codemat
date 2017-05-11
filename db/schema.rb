@@ -15,6 +15,11 @@ ActiveRecord::Schema.define(version: 20170510094241) do
   create_table "dojos", force: :cascade do |t|
     t.integer "user_id"
     t.string "title"
+    t.text "description"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.integer "coding_time"
+    t.integer "break_time"
     t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

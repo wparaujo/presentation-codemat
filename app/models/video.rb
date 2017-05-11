@@ -1,8 +1,9 @@
 class Video < ApplicationRecord
 
+    # before_save :extract_video_id
     belongs_to :dojo, optional: true
 
-    def extractVideoId(videoUrl)
+    def self.extract_video_id(videoUrl)
         yotubeIdRegex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/
         matchId = yotubeIdRegex.match(videoUrl)[1]
         if matchId != nil

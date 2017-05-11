@@ -16,9 +16,13 @@ class DashboardController < ApplicationController
 	def theme_dojos
 	end
 
+	def my_dojos
+		@dojos = current_user.dojos
+	end
+
 	def dojo
-		# TO DO - Create dojo page from id and your video
-		@videos = Video.all
+		@dojo = Dojo.find params[:format]
+		@video = @dojo.video
 	end
 
 	private

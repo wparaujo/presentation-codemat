@@ -1,11 +1,15 @@
 <div class="container">
     <div class="row">
-    <% @videos.each do |video| %>
         <div class="col-sm-7 col-lg-6">
-            <iframe width="400" height="225" src="<%= video.source %>"></iframe>
-            <p>Conteudo do dojo</p>
-            <a href="">Link dos detalhes do dojo</a>
+            <iframe width="400" height="225" src="<%= @video.source %>"></iframe>
+            <p><%= @dojo.title %></p>
+            <p><%= @dojo.category %></p>
+            <p> <%= @dojo.starts_at %></p>
+            <% if @dojo.category == "Randori" %>
+            	<p> <%= @dojo.ends_at %></p>
+            	<p> <%= @dojo.coding_time %></p>
+            	<p> <%= @dojo.break_time %></p>
+            <% end %>
         </div>
-        <% end %>
     </div>
 </div>
