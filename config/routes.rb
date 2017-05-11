@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'near_dojos' => 'dashboard#near_dojos'
   get 'theme_dojos' => 'dashboard#theme_dojos'
   get 'dojo' => 'dashboard#dojo'
+  get 'my_dojos' => 'dashboard#my_dojos'
 
   resources :videos
   resources :users
