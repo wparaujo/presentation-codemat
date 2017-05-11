@@ -19,9 +19,9 @@ class DojosController < ApplicationController
       @dojo.create_location(location_params)
     end
 
-    if video_params[:source]
-      @dojo.create_video(video_params)
-    end
+    # if video_params[:source]
+    #   @dojo.create_video(video_params)
+    # end
 
     if @dojo.save
       theme = Theme.find dojo_params[:theme_id]
@@ -45,6 +45,26 @@ class DojosController < ApplicationController
 
   def show
     @dojo = Dojo.find params[:id]
+  end
+
+  def near_dojos
+    dojo_ids = Location.near(current_user.location.address).collect{|a| a.dojo_id}.uniq
+    @dojos = Dojo.where('id in (?)', dojo_ids)
+
+    # @near_dojos = []
+
+    # near = Location.near(current_user.location.address)
+    # @dojos = Dojo.joins(:location).merge(near)
+    # @location = Location.near(current_user.location.address)
+
+    # @dojos = Dojo.joins(:location).near(current_user.location.address)
+
+    # Dojo.all.each do |d|
+      # @near_dojos = d.location.near(current_user.location.address)
+      # @near_dojos << near_dojo
+    # end
+
+    # @near_dojos
   end
 
   private

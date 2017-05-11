@@ -47,16 +47,16 @@
           </div>
         </div>
 
-        <%= form_for @video do |v|%>
-          <div class="row">
-            <div class="col-6">
-              <div class="form-group">
-                <label for="title">Link do Video</label>
-                <%= v.text_field :source, id: 'source', class: 'form-control' %>
+          <%= form_for @video do |v|%>
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="title">Link do Video</label>
+                  <%= v.text_field :source, id: 'source', class: 'form-control' %>
+                </div>
               </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
       <% end %>
 
 
