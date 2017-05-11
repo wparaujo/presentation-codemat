@@ -20,7 +20,7 @@ class DojosController < ApplicationController
     end
 
     if video_params[:source]
-      @dojo.video_create(video_params)
+      @dojo.create_video(video_params)
     end
 
     if @dojo.save
