@@ -1,14 +1,11 @@
 class Dojo < ApplicationRecord
 	belongs_to :user
-	self.inheritance_column = :category
+	self.inheritance_column = 'category'
 
-  scope :katas, -> { where(category: 'kata') }
-  scope :randoris, -> { where(category: 'randori') }
+  scope :katas, -> { where(category: 'Kata') }
+  scope :randoris, -> { where(category: 'Randori') }
 
   def self.categories
-    %w(kata randori)
+    %w(Kata Randori)
   end
 end
-
-class Kata < Dojo; end
-class Randori < Dojo; end
