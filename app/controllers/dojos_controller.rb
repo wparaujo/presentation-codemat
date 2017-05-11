@@ -1,6 +1,6 @@
 class DojosController < ApplicationController
-  before_action :authorize
-  protect_from_forgery
+  #before_action :authorize
+  #protect_from_forgery
 
   def new
     @dojo = Dojo.new
@@ -14,6 +14,11 @@ class DojosController < ApplicationController
     dojo_factory = dojos_factories[category]
 
     if (dojo_factory)
+      puts "a"*50
+      puts
+      puts current_user
+      puts
+      puts "a"*50
       @dojo = dojo_factory.create(dojo_params, current_user)
       @dojo.create_location(location_params)
     end

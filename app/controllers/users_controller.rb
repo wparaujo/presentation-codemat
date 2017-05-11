@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  protect_from_forgery
-  
+  #protect_from_forgery
+
   def new
   	@user = User.new
     @location = Location.new
@@ -17,9 +17,9 @@ class UsersController < ApplicationController
 
   def create
   	user = User.new(user_params)
-    user.create_location(location_params)
 
   	if user.save
+      user.create_location(location_params)
   		session[:user_id] = user.id
   		redirect_to home_path
   	else
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-  	params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, location_attributes: [:address, :latitude, :longitude])
+  	params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
   end
 
   def location_params
