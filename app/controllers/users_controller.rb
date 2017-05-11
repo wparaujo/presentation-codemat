@@ -6,22 +6,13 @@ class UsersController < ApplicationController
     @location = Location.new
   end
 
-  def home
-    @my_themes = current_user.theme_notifiers
-
-    if @my_themes.empty?
-      #TODO: Use action cable to popup a theme selector
-      redirect_to select_themes_path
-    end
-  end
-
   def create
   	user = User.new(user_params)
 
   	if user.save
       user.create_location(location_params)
   		session[:user_id] = user.id
-  		redirect_to home_path
+  		redirect_to theme_dojos_path
   	else
   		redirect_to 'signup'
   	end
