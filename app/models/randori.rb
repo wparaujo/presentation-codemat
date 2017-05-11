@@ -1,0 +1,1 @@
+class Randori < Dojo; end
