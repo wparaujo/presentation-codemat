@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def new
   	@user = User.new
+    @location = Location.new
   end
 
   def home
@@ -15,6 +16,8 @@ class UsersController < ApplicationController
   def create
 # <<<<<<< HEAD
   	user = User.new(user_params)
+    user.create_location(location_params)
+    
   	if user.save
   		session[:user_id] = user.id
   		redirect_to home_path
@@ -50,6 +53,10 @@ class UsersController < ApplicationController
 
   private
   def user_params
-  	params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+  	params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, location_attributes: [:address, :latitude, :longitude])
+  end
+
+  def location_params
+    params.require(:location).permit(:address, :latitude, :longitude)
   end
 end

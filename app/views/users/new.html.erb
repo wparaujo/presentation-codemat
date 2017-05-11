@@ -44,6 +44,15 @@
 		</div>
 	</div>
 
+	<%= form_for @location do |l| %>
+		<div class="col-6">
+			<div class="form-group">
+				<label for="first_name">Endereço</label>
+				<%= l.text_field :address, id: 'address', class: 'form-control' %>
+			</div>
+		</div>
+	<% end %>
+
 	<div class="row">
 		<div class="col-6">
 			<%= f.submit "Submit", class: "btn btn-primary" %>
