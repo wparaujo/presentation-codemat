@@ -20,7 +20,6 @@ class DojosController < ApplicationController
     end
 
     if video_params[:source]
-      puts entrou 
       @dojo.video_create(video_params)
     end
 
