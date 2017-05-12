@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LearnMeeting</title>
+    <title>Codemat</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-     <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
   </head>
 
   <body>
-    <%= render partial: 'layouts/navbar' %>
+    <%= render partial: (current_user ? 'dashboard/header' : 'layouts/navbar') %>
     <div class = "row">
       <div class="container">
-          <%= yield %>
       </div>
     </div>
   </body>

@@ -3,42 +3,12 @@
     <div class="container">
       <a class="navbar-brand" href="#">Codemat</a>
         <ul class="navbar-nav ml-auto">
-          <% if current_user %>
-
-            <li class="nav-item">
-
-            <li class="nav-item">
-              <%= link_to "Temas", theme_dojos_path , class: "nav-link" %>
-            </li>
-
-            <div class="dropdown">
-              <a class="dropdown-toggle nav-link" data-toggle="dropdown">
-                Messages
-                <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <% current_user.notifications.only_active.each do |notification| %>
-                  <li class="dropdown-item">
-                    <%= link_to notification.message, notification.link %>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-
-            </li>
-            <li class="nav-item">
-              <%= link_to "Criar Dojo", new_dojo_path , class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Sair", logout_path, class: "nav-link" %>
-            </li>
-          <% else %>
-            <li class="nav-item">
-              <%= link_to "Entrar", login_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Nova Conta", new_user_path , class: "nav-link" %>
-            </li>
-          <% end %>
+          <li class="nav-item">
+            <%= link_to "Entrar", login_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Nova Conta", new_user_path , class: "nav-link" %>
+          </li>
         </ul>
     </div>
   </nav>
