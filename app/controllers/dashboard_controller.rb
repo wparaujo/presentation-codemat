@@ -19,8 +19,4 @@ class DashboardController < ApplicationController
   def my_dojos
     @dojos = current_user.dojos
   end
-
-  def dojo
-    @dojo = DojoDecorator.new(Dojo.find params[:format])
-  end
 end

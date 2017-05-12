@@ -11,6 +11,10 @@ class Theme < ApplicationRecord
     def notify_addition(dojo)
       message = "Um novo dojo foi criado em "\
                 "#{self.name}: #{dojo.title}"
-      self.notify_observers("notify", message, "https://google.com")
+
+      puts "a"*50
+      puts dojo.class.to_s
+
+      self.notify_observers("notify", message, "/dojos/#{dojo.id}")
     end
 end

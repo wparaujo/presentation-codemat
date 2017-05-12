@@ -10,17 +10,14 @@ Rails.application.routes.draw do
   post 'follow' => 'themes#follow'
   post 'unfollow' => 'themes#unfollow'
 
-  # get 'near_dojos' => 'dojos#near_dojos'
-
   # Dashboard
   get 'near_dojos' => 'dashboard#near_dojos'
   get 'theme_dojos' => 'dashboard#theme_dojos'
-  get 'dojo' => 'dashboard#dojo'
   get 'my_dojos' => 'dashboard#my_dojos'
 
   resources :videos
   resources :users
-  resources :dojos, only: [:new, :create, :index]
+  resources :dojos
   resources :themes
   resources :locations
 end

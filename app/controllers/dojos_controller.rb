@@ -47,7 +47,7 @@ class DojosController < ApplicationController
   end
 
   def show
-    @dojo = Dojo.find params[:id]
+    @dojo = DojoDecorator.new(Dojo.find params[:id])
   end
 
   private
