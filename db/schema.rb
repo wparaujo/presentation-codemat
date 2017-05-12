@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(version: 20170510094241) do
 
   create_table "themes", force: :cascade do |t|
     t.string "name"
-    t.string "iconName"
-    t.string "themeBackground"
+    t.string "icon_name"
+    t.string "theme_background"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -9,18 +9,18 @@
 # Creating valid user
 puts "Creating themes."
 Theme.create([
-  {name: "C++", iconName: "fa fa-code"},
-  {name: "Swift", iconName: "fa fa-code"},
-  {name: "Ruby", iconName: "fa fa-code"},
-  {name: "Python", iconName: "fa fa-code"},
-  {name: "Javascript", iconName: "fa fa-code"},
-  {name: "Node", iconName: "fa fa-code"}
-  # {name: "Jogos", iconName: "fa fa-gamepad"},
-  # {name: "Ambiente", iconName: "fa fa-tree"},
-  # {name: "Humanas", iconName: "fa fa-map"},
-  # {name: "Arte", iconName: "fa fa-brush"},
-  # {name: "Tecnologia", iconName: "fa fa-code"},
-  # {name: "Música", iconName: "fa fa-music"},
-  # {name: "Outros", iconName: "fa fa-arrows-alt"}
+  {name: "C++", icon_name: "fa fa-code"},
+  {name: "Swift", icon_name: "fa fa-code"},
+  {name: "Ruby", icon_name: "fa fa-code"},
+  {name: "Python", icon_name: "fa fa-code"},
+  {name: "Javascript", icon_name: "fa fa-code"},
+  {name: "Node", icon_name: "fa fa-code"}
+  # {name: "Jogos", icon_name: "fa fa-gamepad"},
+  # {name: "Ambiente", icon_name: "fa fa-tree"},
+  # {name: "Humanas", icon_name: "fa fa-map"},
+  # {name: "Arte", icon_name: "fa fa-brush"},
+  # {name: "Tecnologia", icon_name: "fa fa-code"},
+  # {name: "Música", icon_name: "fa fa-music"},
+  # {name: "Outros", icon_name: "fa fa-arrows-alt"}
 ])
 puts "Done."

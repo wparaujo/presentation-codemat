@@ -1,0 +1,50 @@
+  <% unless current_user.theme_notifiers.empty? %>
+    <div id="header">
+      <div class="mdl-layout__content headerThemesSection">
+        <div class="logo-font-header slogan-header">Temas que estou seguindo</div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="container">
+    <section id="dojo" class="content-section text-center">
+      <div class='col-md-12 no-horizontal-padding'>
+        <div class='row'>
+          <% current_user.theme_notifiers.each do |theme| %>
+            <div id='tRow' class='col-md-4 col-sm-6 col-xs-12 tiles'>
+              <%= link_to unfollow_path(id: theme.id),:onclick => "history.go(0)", method: :post, remote: true do %>
+                <% icon_class = "fa " + theme.icon_name.to_s %>
+                <div class='text-center'><i  class="<%=theme.icon_name.to_s%>"%></i></div>
+              <% end %>
+              <h4><%= theme.name %></h4>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+ </div>
+
+<% unless current_user.themes_i_am_not_observer.empty? %>
+  <div id="header">
+    <div class="mdl-layout__content headerThemesSectionTwo">
+      <div class="logo-font-header slogan-header">Temas que posso seguir</div>
+    </div>
+  </div>
+<% end %>
+
+<div class="container">
+  <section id="dojo" class="content-section text-center">
+    <div class='col-md-12 no-horizontal-padding'>
+      <div class='row'>
+        <% current_user.themes_i_am_not_observer.each do |theme| %>
+          <div id='tRow' class='col-md-4 col-sm-6 col-xs-12 tiles'>
+            <%= link_to follow_path(id: theme.id), :onclick => "history.go(0)", method: :post, remote: true do %>
+              <div class='text-center'><i class="<%=theme.icon_name.to_s%>"></i></div>
+            <% end %>
+           <h4><%= theme.name %></h4>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</div>
