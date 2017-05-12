@@ -19,6 +19,7 @@ gem 'sass-rails', github: "rails/sass-rails"
 # Use a Free Bootstrap Template
 gem 'bootstrap_sb_admin_base_v2'
 gem 'font-awesome-rails'
+gem 'font-mfizz-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
