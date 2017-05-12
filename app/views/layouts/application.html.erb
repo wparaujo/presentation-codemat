@@ -14,9 +14,12 @@
 
   <body>
     <%= render partial: (current_user ? 'dashboard/header' : 'layouts/navbar') %>
-    <div class = "row">
-      <div class="container">
+    <div id="page-wrapper">
+      <div style="padding:1px;">
+        <% flash.each do |name, msg| %>
+          <%= content_tag(:div, msg, class: "alert alert-info") %>
+        <% end %>
+        <%= yield %>
       </div>
-    </div>
   </body>
 </html>

@@ -33,9 +33,6 @@
     <!-- /.dropdown-user -->
     </li>
 
-
-
-
     <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
       <i class="fa fa-users fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -54,7 +51,6 @@
     <!-- /.dropdown-user -->
     </li>
 
-
     <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
       <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -70,34 +66,5 @@
     </li>
   </ul>
 
-  <div class="navbar-default sidebar" role="navigation">
-    <div class="sidebar-nav navbar-collapse" aria-expanded="false" style="height: 1px;">
-      <ul class="nav in" id="side-menu">
-        <li class="sidebar-search">
-          <div class="input-group custom-search-form">
-            <input type="text" class="form-control" placeholder="Search...">
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="button">
-                <i class="fa fa-search"></i>
-              </button>
-            </span>
-          </div>
-        <!-- /input-group -->
-        </li>
-        <li>
-          Exemplo
-        </li>
-        <li>
-          Exemplo
-        </li>
-        <li>
-          Exemplo
-        </li>
-        <li>
-          Exemplo
-        </li>
-      </ul>
-    </div>
-    <!-- /.sidebar-collapse -->
-  </div>
+  <%= render partial: 'dashboard/sidebar' %>
 </nav>
