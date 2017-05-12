@@ -1,14 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-7 col-lg-6">
-            <iframe width="400" height="225" src="<%= @video.source %>"></iframe>
-            <p><%= @dojo.title %></p>
-            <p><%= @dojo.category %></p>
-            <p> <%= @dojo.starts_at %></p>
-            <% if @dojo.category == "Randori" %>
-            	<p> <%= @dojo.coding_time %></p>
-            	<p> <%= @dojo.break_time %></p>
-            <% end %>
+          <%= @dojo.render_info %>
         </div>
     </div>
 </div>
