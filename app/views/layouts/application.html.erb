@@ -14,7 +14,7 @@
 
   <body>
     <%= render partial: (current_user ? 'dashboard/header' : 'layouts/navbar') %>
-    <div id="page-wrapper">
+    <div id="<%= current_user ? "page-wrapper" : "wrapper-content" %>">
       <div style="padding:1px;">
         <% flash.each do |name, msg| %>
           <%= content_tag(:div, msg, class: "alert alert-info") %>
