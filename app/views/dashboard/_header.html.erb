@@ -52,18 +52,34 @@
     </li>
 
     <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-      <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
-      </a>
-      <ul class="dropdown-menu dropdown-user">
-        <% current_user.notifications.only_active.each do |notification| %>
-          <li>
-            <%= link_to notification.message, notification.link %>
-          </li>
-        <% end %>
-      </ul>
-    <!-- /.dropdown-user -->
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-messages">
+          <% current_user.notifications.only_active.each do |notification| %>
+            <li>
+                <%= link_to notification.link do %> 
+                    <div>
+                        <strong>Dojo criado</strong>
+                        <span class="pull-right text-muted">
+                            <em><%= notification.created_at.strftime("%d/%m/%Y às %I:%M%p") %></em>
+                        </span>
+                    </div>
+                    <div><%= notification.message %></div>
+                <% end %>
+            </li>
+            <li class="divider"></li>
+          <% end %>
+            <li>
+                <a class="text-center" href="#">
+                    <strong>Read All Messages</strong>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+        <!-- /.dropdown-messages -->
     </li>
+    <!-- /.dropdown -->
   </ul>
 
   <%= render partial: 'dashboard/sidebar' %>
