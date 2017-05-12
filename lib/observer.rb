@@ -24,6 +24,12 @@ module Observer
     end
   end
 
+  module Subscriber
+    def notify(message, link)
+      raise "Not implemented"
+    end
+  end
+
   module Finder
     def all_except_with_observer(observer, notifiers_method)
       unless observer.send(notifiers_method.to_s).empty?
