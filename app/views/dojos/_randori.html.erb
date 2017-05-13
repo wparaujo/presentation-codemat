@@ -1,19 +1,36 @@
+<%= stylesheet_link_tag 'dojos' %>
+
 <div class="row">
+
 	<div class="col-lg-offset-4">
 		<div class="row">
-			<iframe width="700" height="525" src="<%= video.source %>"></iframe>
+			<iframe width="700" height="525" src="<%= video.source %>" style="border: none"></iframe>
 		</div>
 
-		<div class="row">
-		<div class="col-lg-offset-6">
-			<p>Título: <%= dojo.title %></p>
-			<p>Categoria: <%= dojo.category %></p>
-			<p>Início: <%= dojo.starts_at %></p>
-			<p>Encerramento: <%= dojo.ends_at %></p>
-			<p>Sessão de Coding em minutos: <%= dojo.coding_time %></p>
-			<p>Intervalo em minutos: <%= dojo.break_time %> </p>
-			<%#=# link_to dojo.title, edit_dojo_path(dojo) %>
-		</div>
-	</div>
+		<h2><%= dojo.title %></h2>
+		<p>Esse dojo é incrível venham participar e aprender loucuras em programação!</p>
+
+		<table>
+		  <tr>
+		    <td>Categoria</td>
+		    <td><%= dojo.category %></td>
+		  </tr>
+		  <tr>
+		    <td>Início</td>
+		    <td><%= dojo.starts_at %></td>
+		  </tr>
+		  <tr>
+		    <td>Encerramento</td>
+		    <td><%= dojo.ends_at %></td>
+		  </tr>
+		  <tr>
+		    <td>Sessão de Coding em minutos</td>
+		    <td><%= dojo.coding_time %></td>
+		  </tr>
+		  <tr>
+		    <td>Intervalo em minutos</td>
+		    <td><%= dojo.break_time %></td>
+		  </tr>
+		</table>
 	</div>
 </div>
