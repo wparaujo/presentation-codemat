@@ -1,6 +1,19 @@
-<iframe width="400" height="225" src="<%= video.source %>"></iframe>
-<p><%= dojo.title %></p>
-<p><%= dojo.category %></p>
-<p> <%= dojo.starts_at %></p>
-<p> <%= dojo.coding_time %></p>
-<p> <%= dojo.break_time %></p>
+<div class="row">
+	<div class="col-lg-offset-4">
+		<div class="row">
+			<iframe width="700" height="525" src="<%= video.source %>"></iframe>
+		</div>
+
+		<div class="row">
+		<div class="col-lg-offset-6">
+			<p>Título: <%= dojo.title %></p>
+			<p>Categoria: <%= dojo.category %></p>
+			<p>Início: <%= dojo.starts_at %></p>
+			<p>Encerramento: <%= dojo.ends_at %></p>
+			<p>Sessão de Coding em minutos: <%= dojo.coding_time %></p>
+			<p>Intervalo em minutos: <%= dojo.break_time %> </p>
+			<%#=# link_to dojo.title, edit_dojo_path(dojo) %>
+		</div>
+	</div>
+	</div>
+</div>

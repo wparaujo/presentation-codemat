@@ -19,4 +19,13 @@ class DojoDecorator < SimpleDelegator
           }
       }
     end
+
+    def define_edit
+      Proc.new {
+        ApplicationController.render partial: "/dojos/#{@dojo.id}/#{@dojo.category.downcase}",
+          locals: {
+            dojo: @dojo
+          }
+      }
+    end
 end

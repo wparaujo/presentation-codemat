@@ -12,29 +12,36 @@
                 </div>
                 <!-- /input-group -->
             </li>
-            <li>
+            <!-- <li>
                 <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-            </li>
+            </li> -->
             <li>
-                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                <!-- <a href="tables.html"><i class="fa fa-table fa-fw"></i> Temas </a> -->
+                <%= link_to "Temas", theme_dojos_path , class: "nav-link" %>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Dojos<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="flot.html">Flot Charts</a>
+                        <!-- <a href="flot.html">Dojos Próximos</a> -->
+                        <%= link_to "Dojos Próximos", near_dojos_path %>
                     </li>
                     <li>
-                        <a href="morris.html">Morris.js Charts</a>
+                        <!-- <a href="morris.html">Dojos que Participo</a> -->
+                        <%= link_to "Dojos que Participo", my_dojos_path %>
+                    </li>
+                    <li>
+                        <%= link_to "Criar Dojo", new_dojo_path %>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
             </li>
-            <li>
-                <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
-            </li>
-            <li>
+            <!-- <li>
                 <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
-            </li>
+            </li> -->
             <li>
-                <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
+                <!-- <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="panels-wells.html">Panels and Wells</a>
@@ -54,10 +61,10 @@
                     <li>
                         <a href="grid.html">Grid</a>
                     </li>
-                </ul>
+                </ul> -->
                 <!-- /.nav-second-level -->
             </li>
-            <li>
+            <!-- <li>
                 <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
@@ -83,11 +90,11 @@
                             </li>
                         </ul>
                         <!-- /.nav-third-level -->
-                    </li>
-                </ul>
+                    <!-- </li> -->
+                <!-- </ul> -->
                 <!-- /.nav-second-level -->
-            </li>
-            <li>
+            <!-- </li>  -->
+           <!--  <li>
                 <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
@@ -98,7 +105,7 @@
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
-            </li>
+            </li> 
         </ul>
     </div>
     <!-- /.sidebar-collapse -->

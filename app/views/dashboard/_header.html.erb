@@ -9,31 +9,8 @@
     <a class="navbar-brand" href="/">Codemat</a>
   </div>
   <ul class="nav navbar-top-links navbar-right">
-    <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-      <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-      </a>
-      <ul class="dropdown-menu dropdown-user">
 
-        <li>
-          <a href="#">
-            <i class="fa fa-user fa-fw"></i> User Profile
-          </a>
-        </li>
-
-        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-        </li>
-
-        <li class="divider"></li>
-
-        <li class="nav-item">
-          <%= link_to "Sair", logout_path, class: "nav-link" %>
-        </li>
-      </ul>
-    <!-- /.dropdown-user -->
-    </li>
-
-    <li class="dropdown">
+    <!-- <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
       <i class="fa fa-users fa-fw"></i> <i class="fa fa-caret-down"></i>
       </a>
@@ -47,7 +24,7 @@
         <li class="nav-item">
           <%= link_to "Criar Dojo", new_dojo_path , class: "nav-link" %>
         </li>
-      </ul>
+      </ul> -->
     <!-- /.dropdown-user -->
     </li>
 
@@ -79,6 +56,31 @@
         </ul>
         <!-- /.dropdown-messages -->
     </li>
+
+     <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+      <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+      </a>
+      <ul class="dropdown-menu dropdown-user">
+
+        <li>
+          <a href="#">
+            <i class="fa fa-user fa-fw"></i> User Profile
+          </a>
+        </li>
+
+        <!-- <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a> -->
+        </li>
+
+        <li class="divider"></li>
+
+        <li class="nav-item">
+          <%= link_to "Sair", logout_path, class: "nav-link" %>
+        </li>
+      </ul>
+    <!-- /.dropdown-user -->
+    </li>
+    
     <!-- /.dropdown -->
   </ul>
 

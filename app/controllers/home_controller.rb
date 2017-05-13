@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   def index
-      @videos = Video.all
+      if current_user
+      	redirect_to theme_dojos_path
+      end
   end
 end

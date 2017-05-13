@@ -38,6 +38,7 @@ class DojosController < ApplicationController
   end
 
   def edit
+    @dojo = Dojo.find(params[:id])
   end
 
   def update
