@@ -53,7 +53,7 @@ class DojosController < ApplicationController
 
   private
     def dojo_params
-      params.require(:dojo).permit(:user_id, :theme_id, :title, :category, :starts_at)
+      params.require(:dojo).permit(:user_id, :theme_id, :title, :category, :starts_at, :ends_at, :description, :coding_time, :break_time)
     end
 
     def location_params
