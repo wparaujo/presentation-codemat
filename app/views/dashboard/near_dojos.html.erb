@@ -1,3 +1,18 @@
-<% @dojos.each do |d|%>
-	<%= link_to d.title, dojo_path(d) %> 
-<% end %>
+<table class="table">
+	<thead>
+	    <tr>
+	      <th>Nome</th>
+	      <th>Início</th>
+	      <th>Encerramento</th>
+	    </tr>
+	  </thead>
+	<% @dojos.each do |d|%>
+		  <tbody>
+		    <tr>
+		      <td scope="row"><%= link_to d.title, dojo_path(d) %></td>
+		      <td><%= d.starts_at %></td>
+		      <td><%= d.starts_at %></td>
+		    </tr>
+		  </tbody>
+	<% end %>
+</table> 

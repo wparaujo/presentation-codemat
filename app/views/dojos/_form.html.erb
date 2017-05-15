@@ -41,6 +41,33 @@
         </div>
       </div>
 
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="title">Encerramento</label>
+            <%= f.datetime_field :ends_at, id: 'ends_at', class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="title">Tempo Coding</label>
+            <%= f.text_field :coding_time, id: 'coding_time', class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="title">Tempo Break</label>
+            <%= f.text_field :break_time, id: 'break_time', class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+
       <%= form_for @location do |l|%>
         <div class="row">
           <div class="col-6">
@@ -63,8 +90,24 @@
           <% end %>
       <% end %>
 
-
       <%= f.submit "Submit", class: "btn btn-primary" %>
     </div>
   </div>
 <% end %>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+      // $("#hide").click(function(){
+      //     $("p").hide();
+      // });
+      // $("#show").click(function(){
+      //     $("p").show();
+      // });
+      var cateogry = $('#cateogry option:selected').text();
+      if (category == 'kata') {
+        $('#break_time').hide();
+      }
+  });
+</script>
